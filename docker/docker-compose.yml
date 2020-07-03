@@ -1,0 +1,12 @@
+version: "2"
+services:
+  al2:
+    image: amazonlinux:2
+    restart: always
+    build: .
+    container_name: al2
+    privileged: true
+    working_dir: '/home/ec2-user/src'
+    volumes:
+      - ../:/home/ec2-user/src
+    command: '/sbin/init'
